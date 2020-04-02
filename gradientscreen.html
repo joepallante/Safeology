@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+        <style>
+                body{
+                    height:650px;
+                    background-color:red; 
+                    background-image: linear-gradient(lightblue, yellowgreen); }
+                button{
+                    height: 50%;
+                    width: 100%;
+                    position: fixed;
+                    bottom: 0px;
+                    background: transparent;
+                    border: none;
+                    font-size: 0;
+                }
+                </style>
+    <head>
+    
+    
+
+    <title>Safeology</title>
+    </head>
+    <script>
+    window.onload = function(){
+        var constriants = {audio:true};
+        navigator.mediaDevices.getUserMedia(constriants).then(function(mediastream) {
+            var video = document.queryselect('video');
+            video.srcObject = mediastream;
+            video.play
+        })
+    }
+
+    var x = document.getElementById("demo");
+    function getLocation(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }else{
+            x.innerHTML = "Total Bruh Moment"
+        }
+    }
+
+    function showPosition(position){
+        x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+    }
+
+    </script>
+    <body>
+    <p id="demo"></p>
+    
+    <video></video>
+    <div class = "">
+    <button onclick = "record()">H</button>
+
+    </div>
+
+    </body>
+</html>
